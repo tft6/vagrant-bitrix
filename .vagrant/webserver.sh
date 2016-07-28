@@ -22,3 +22,4 @@ echo "grant all privileges on *.* to 'root'@'192.168.33.1' with grant option;" |
 
 # Настройка модулей php
 sudo mv /etc/php.d/30-mysqli.ini.disabled /etc/php.d/30-mysqli.ini
+sudo mv /etc/php.d/20-curl.ini.disabled /etc/php.d/20-curl.ini
