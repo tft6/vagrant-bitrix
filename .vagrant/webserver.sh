@@ -1,5 +1,11 @@
 ﻿#!/bin/bash
 
+# Установка DNS гугла
+sudo echo "nameserver 8.8.8.8" >> /etc/resolv.conf
+sudo echo "nameserver 8.8.4.4" >> /etc/resolv.conf
+sudo echo "DNS1=8.8.8.8" >> /etc/sysconfig/network-scripts/ifcfg-eth0
+sudo echo "DNS1=8.8.4.4" >> /etc/sysconfig/network-scripts/ifcfg-eth0
+
 # Обновление системы
 sudo yum update -y
 
