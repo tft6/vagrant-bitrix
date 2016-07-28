@@ -30,3 +30,14 @@ echo "grant all privileges on *.* to 'root'@'192.168.33.1' with grant option;" |
 # Настройка модулей php
 sudo mv /etc/php.d/30-mysqli.ini.disabled /etc/php.d/30-mysqli.ini
 sudo mv /etc/php.d/20-curl.ini.disabled /etc/php.d/20-curl.ini
+
+# Конфигурацмя xdebug
+sudo rm /etc/php.d/15-xdebug.ini
+sudo bash -c "echo 'zend_extension=/usr/lib64/php/modules/xdebug.so
+xdebug.idekey = PHPSTORM
+xdebug.remote_host=192.168.33.1
+xdebug.remote_port=10000
+xdebug.remote_enable=1
+xdebug.remote_autostart=0
+' >> /etc/php.d/15-xdebug.ini"
+sudo service httpd restart
