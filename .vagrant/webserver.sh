@@ -41,3 +41,6 @@ xdebug.remote_enable=1
 xdebug.remote_autostart=0
 ' >> /etc/php.d/15-xdebug.ini"
 sudo service httpd restart
+
+# Стартовать апач при загрузке
+sudo chkconfig httpd on
