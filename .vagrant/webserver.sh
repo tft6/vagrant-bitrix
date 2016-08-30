@@ -40,7 +40,11 @@ xdebug.remote_port=10000
 xdebug.remote_enable=1
 xdebug.remote_autostart=0
 ' >> /etc/php.d/15-xdebug.ini"
-sudo service httpd restart
+
+# Директория для сессий
+sudo mkdir /tmp/php_sessions /tmp/php_sessions/www
+sudo chown bitrix.bitrix /tmp/php_sessions/www
 
 # Стартовать апач при загрузке
+sudo service httpd restart
 sudo chkconfig httpd on
